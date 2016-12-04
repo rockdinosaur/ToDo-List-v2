@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: normal 16px Helvetica, Arial, sans-serif;
+}
+
+header,
+main {
+  display: inline-block;
+  vertical-align: top; /* corrects alignment issue */
+}
+
+nav {
+  min-height: 100vh;
+}
+
+/* Header styles */
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper > input[type="checkbox"] {
+  position: absolute;
+  right: -34px;
+  top: 20px;
+  display: none;
+}
+
+header nav {
+    width: 330px;
+    text-align: center;
+    background-color: #464f77;
+    padding: 50px 0 0 0;
+    color: #b2b5c3;
+}
+
+header nav section:first-child h2::before {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  content: "";
+  background: transparent url("images/icon_list.png") 0 0 no-repeat;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+header nav section:last-child h2::before {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  content: "";
+  background: transparent url("images/icon_checked.png") 0 0 no-repeat;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+header ul a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.num {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  position: absolute;
+  color: #fff;
+  background-color: #6b7292;
+  font-size: 13px;
+  right: 30px;
+}
+
+header h2 {
+  font-size: 18px;
+  color: #fff;
+  margin: 25px 0;
+}
+
+
+h2 > .num {
+  width: 24px;
+  height: 24px;
+}
+
+.num span {
+  top: 10px;
+  right: 3px;
+}
+
+header section:last-child a {
+  text-decoration: line-through;
+}
+
+.selected {
+  background-color: #383f5f;
+  color: #fff;
+}
+
+.selected .num,
+main h1 > .num {
+  color: #fff;
+  background-color: #148fd5;
+  font-size: 13px;
+}
+
+header section:nth-of-type(2) li {
+  text-decoration: line-through;
+}
+/* Main section styles */
+
+main {
+  padding: 75px 70px 0 30px;
+  width: calc(100% - 330px);
+}
+
+main h1 {
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+
+main h1 > .num {
+  left: 50px;
+}
+
+main h2 {
+  color: #148fd5;
+  padding-bottom: 25px;
+  font-size: 18px;
+}
+
+main h2 > a {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: transparent url("images/icon_add.png") 0 0 no-repeat;
+}
+
+main ol li {
+  border-top: 1px solid #e7e7e7;
+  padding: 15px 0;
+}
+
+.delete {
+  float: right;
+  width: 16px;
+  height: 17px;
+  background: transparent url("images/icon_trash.png") 0 0 no-repeat;
+}
+
+/* Media Query */
+
+@media (max-width: 768px) {
+
+  .wrapper > input[type="checkbox"] {
+    display: block;
+  }
+
+  .wrapper > input[type="checkbox"]::before {
+    content: "";
+    display: inline-block;
+    width: 23px;
+    height: 18px;
+    background: transparent url("images/icon_hamburger.png") 0 0 no-repeat;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+  }
+
+  #menu-toggle:checked + nav {
+    display: block;
+  }
+}
